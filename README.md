@@ -5,7 +5,7 @@
 
 OS: Windows 10  
 IDE: Pycharm  
-venv: Ananconda  
+venv: Anaconda  
 Language: Python 3.6  
 
 ### Pycharm + Anaconda
