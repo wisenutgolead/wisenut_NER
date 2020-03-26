@@ -3,15 +3,15 @@
 
 ## 환경 구성
 
-OS: Windows 10
-IDE: Pycharm
-venv: Ananconda
-Language: Python 3.6
+OS: Windows 10  
+IDE: Pycharm  
+venv: Ananconda  
+Language: Python 3.6  
 
 ### Pycharm + Anaconda
-(PyCharm for Anaconda Community Edition)[https://www.jetbrains.com/pycharm/download/download-thanks.html?code=PCC&platform=windowsAnaconda]
+[PyCharm for Anaconda Community Edition](https://www.jetbrains.com/pycharm/download/download-thanks.html?code=PCC&platform=windowsAnaconda)
 
-miniconda 설치
+**miniconda 설치**
 
 **Pycharm + Anaconda 연동**  
 Pycharm - Files- Settings - Project interpreter에서 Anaconda 가상환경 생성 및 추가
