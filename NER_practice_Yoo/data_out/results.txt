@@ -1,0 +1,198 @@
+./data_in/EXOBRAIN_NE_CORPUS_10000.txt
+
+Test:
+Epoch [1/50], Step [300/3333], Loss: 0.3385, accuracy: 0.8154, F1 Score: 0.2012, Max F1 Score: 0.2012classification_report:
+              precision    recall  f1-score   support
+
+       <PAD>       0.00      0.00      0.00         0
+        B_LC       0.00      0.00      0.00         2
+        B_DT       0.00      0.00      0.00         2
+        B_OG       0.00      0.00      0.00         3
+        B_TI       0.00      0.00      0.00         0
+        B_PS       0.17      0.10      0.12        10
+           I       0.17      0.14      0.15         7
+           O       0.88      0.98      0.93       106
+
+   micro avg       0.82      0.82      0.82       130
+   macro avg       0.15      0.15      0.15       130
+weighted avg       0.74      0.82      0.78       130
+
+
+Test:
+Epoch [1/50], Step [600/3333], Loss: 0.2495, accuracy: 0.8692, F1 Score: 0.3168, Max F1 Score: 0.3168classification_report:
+              precision    recall  f1-score   support
+
+       <PAD>       0.00      0.00      0.00         0
+        B_LC       0.00      0.00      0.00         2
+        B_DT       0.00      0.00      0.00         2
+        B_OG       0.00      0.00      0.00         3
+        B_TI       0.00      0.00      0.00         0
+        B_PS       0.50      0.70      0.58        10
+           I       0.50      0.29      0.36         7
+           O       0.93      0.98      0.95       106
+
+   micro avg       0.87      0.87      0.87       130
+   macro avg       0.24      0.25      0.24       130
+weighted avg       0.82      0.87      0.84       130
+
+
+Test:
+Epoch [1/50], Step [900/3333], Loss: 0.5413, accuracy: 0.8846, F1 Score: 0.4595, Max F1 Score: 0.4595classification_report:
+              precision    recall  f1-score   support
+
+       <PAD>       0.00      0.00      0.00         0
+        B_LC       0.00      0.00      0.00         2
+        B_DT       1.00      0.50      0.67         2
+        B_OG       0.00      0.00      0.00         3
+        B_TI       0.00      0.00      0.00         0
+        B_PS       0.58      0.70      0.64        10
+           I       0.60      0.43      0.50         7
+           O       0.93      0.98      0.95       106
+
+   micro avg       0.88      0.88      0.88       130
+   macro avg       0.39      0.33      0.34       130
+weighted avg       0.85      0.88      0.86       130
+
+
+Test:
+Epoch [1/50], Step [1200/3333], Loss: 0.2677, accuracy: 0.8769, F1 Score: 0.4967, Max F1 Score: 0.4967classification_report:
+              precision    recall  f1-score   support
+
+       <PAD>       0.00      0.00      0.00         0
+        B_LC       0.25      0.50      0.33         2
+        B_DT       1.00      0.50      0.67         2
+        B_OG       0.00      0.00      0.00         3
+        B_TI       0.00      0.00      0.00         0
+        B_PS       0.75      0.60      0.67        10
+           I       0.50      0.29      0.36         7
+           O       0.92      0.98      0.95       106
+
+   micro avg       0.88      0.88      0.88       130
+   macro avg       0.43      0.36      0.37       130
+weighted avg       0.85      0.88      0.86       130
+
+
+Test:
+Epoch [1/50], Step [1500/3333], Loss: 0.1398, accuracy: 0.8692, F1 Score: 0.4652, Max F1 Score: 0.4967classification_report:
+              precision    recall  f1-score   support
+
+       <PAD>       0.00      0.00      0.00         0
+        B_LC       0.20      0.50      0.29         2
+        B_DT       1.00      0.50      0.67         2
+        B_OG       0.00      0.00      0.00         3
+        B_TI       0.00      0.00      0.00         0
+        B_PS       0.75      0.60      0.67        10
+           I       0.50      0.14      0.22         7
+           O       0.92      0.98      0.95       106
+
+   micro avg       0.87      0.87      0.87       130
+   macro avg       0.42      0.34      0.35       130
+weighted avg       0.85      0.87      0.85       130
+
+
+Test:
+Epoch [1/50], Step [1800/3333], Loss: 0.2787, accuracy: 0.8923, F1 Score: 0.5620, Max F1 Score: 0.5620classification_report:
+              precision    recall  f1-score   support
+
+       <PAD>       0.00      0.00      0.00         0
+        B_LC       0.33      1.00      0.50         2
+        B_DT       1.00      0.50      0.67         2
+        B_OG       0.00      0.00      0.00         3
+        B_TI       0.00      0.00      0.00         0
+        B_PS       0.86      0.60      0.71        10
+           I       0.75      0.43      0.55         7
+           O       0.93      0.98      0.95       106
+
+   micro avg       0.89      0.89      0.89       130
+   macro avg       0.48      0.44      0.42       130
+weighted avg       0.88      0.89      0.88       130
+
+
+Test:
+Epoch [1/50], Step [2100/3333], Loss: 0.4964, accuracy: 0.9000, F1 Score: 0.6219, Max F1 Score: 0.6219classification_report:
+              precision    recall  f1-score   support
+
+       <PAD>       0.00      0.00      0.00         0
+        B_LC       0.50      0.50      0.50         2
+        B_DT       1.00      0.50      0.67         2
+        B_OG       0.50      0.33      0.40         3
+        B_TI       0.00      0.00      0.00         0
+        B_PS       0.86      0.60      0.71        10
+           I       0.60      0.43      0.50         7
+           O       0.93      0.99      0.96       106
+
+   micro avg       0.90      0.90      0.90       130
+   macro avg       0.55      0.42      0.47       130
+weighted avg       0.89      0.90      0.89       130
+
+
+Test:
+Epoch [1/50], Step [2400/3333], Loss: 0.3663, accuracy: 0.8923, F1 Score: 0.6370, Max F1 Score: 0.6370classification_report:
+              precision    recall  f1-score   support
+
+       <PAD>       0.00      0.00      0.00         0
+        B_LC       1.00      0.50      0.67         2
+        B_DT       1.00      0.50      0.67         2
+        B_OG       0.50      0.33      0.40         3
+        B_TI       0.00      0.00      0.00         0
+        B_PS       0.86      0.60      0.71        10
+           I       0.43      0.43      0.43         7
+           O       0.93      0.98      0.95       106
+
+   micro avg       0.89      0.89      0.89       130
+   macro avg       0.59      0.42      0.48       130
+weighted avg       0.89      0.89      0.89       130
+
+
+Test:
+Epoch [1/50], Step [2700/3333], Loss: 0.2619, accuracy: 0.8923, F1 Score: 0.5810, Max F1 Score: 0.6370classification_report:
+              precision    recall  f1-score   support
+
+       <PAD>       0.00      0.00      0.00         0
+        B_LC       1.00      0.50      0.67         2
+        B_DT       1.00      0.50      0.67         2
+        B_OG       0.00      0.00      0.00         3
+        B_TI       0.00      0.00      0.00         0
+        B_PS       0.78      0.70      0.74        10
+           I       0.50      0.43      0.46         7
+           O       0.93      0.98      0.95       106
+
+   micro avg       0.89      0.89      0.89       130
+   macro avg       0.53      0.39      0.44       130
+weighted avg       0.87      0.89      0.88       130
+
+
+Test:
+Epoch [1/50], Step [3000/3333], Loss: 0.1973, accuracy: 0.8923, F1 Score: 0.5810, Max F1 Score: 0.6370classification_report:
+              precision    recall  f1-score   support
+
+       <PAD>       0.00      0.00      0.00         0
+        B_LC       1.00      0.50      0.67         2
+        B_DT       1.00      0.50      0.67         2
+        B_OG       0.00      0.00      0.00         3
+        B_TI       0.00      0.00      0.00         0
+        B_PS       0.78      0.70      0.74        10
+           I       0.50      0.43      0.46         7
+           O       0.93      0.98      0.95       106
+
+   micro avg       0.89      0.89      0.89       130
+   macro avg       0.53      0.39      0.44       130
+weighted avg       0.87      0.89      0.88       130
+
+
+Test:
+Epoch [1/50], Step [3300/3333], Loss: 0.6949, accuracy: 0.9077, F1 Score: 0.6437, Max F1 Score: 0.6437classification_report:
+              precision    recall  f1-score   support
+
+       <PAD>       0.00      0.00      0.00         0
+        B_LC       1.00      1.00      1.00         2
+        B_DT       1.00      0.50      0.67         2
+        B_OG       0.00      0.00      0.00         3
+        B_TI       0.00      0.00      0.00         0
+        B_PS       0.78      0.70      0.74        10
+           I       0.60      0.43      0.50         7
+           O       0.93      0.99      0.96       106
+
+   micro avg       0.91      0.91      0.91       130
+   macro avg       0.54      0.45      0.48       130
+weighted avg       0.88      0.91      0.89       130
