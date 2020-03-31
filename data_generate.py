@@ -12,8 +12,11 @@ import numpy as np
 # 3. 데이터를 모델에 넣기 위해 정수 인코딩한다
 # 4. 문장간의 길이를 맞추기 위해 0으로 패딩한다
 
+# get_data() 함수에 data type(train or test)만 넣으면 자동적으로 데이터를 만들 수 있다
 
 def get_data(data_type):
+    
+    print('시간이 조금 오래 걸릴 수 있습니다.')
     # 1
     str_words = []
     pos = []
@@ -38,15 +41,23 @@ def get_data(data_type):
     # 4.
     padded_words, padded_char, padded_pos, padded_lex = padding(encoded_words, encoded_char, encoded_pos, encoded_lex, lex_to_id)
 
-    #
+    # 
     labels = encoded_lex
     lengths = len(labels)
-
+    
+    
     print('data generate success!')
     return str_words, padded_words, padded_char, padded_pos, padded_lex, labels, lengths
 
 
 
+
+
+
+
+#############################################################################################
+#get_data() 함수 작동에 필요한 다른 함수들
+#############################################################################################
 
 # iob 태깅 타입 바꾸기
 def update_tag_scheme(sentences, tag_scheme='iob'):
