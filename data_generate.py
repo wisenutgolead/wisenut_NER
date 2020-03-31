@@ -275,7 +275,7 @@ def lex_mapping(lex_cnt=33):
                    'I-LC_CNT','I-LC_PLA','I-LC_ADD','I-LC_OTHS','I-CV_TECH','I-CV_LAWS','I-EV_LT','I-EV_ST',
                    'I-GR_PLOR','I-GR_PLCI','I-TM_FLUC','I-TM_ECOFIN','I-TM_FUNC','I-TM_CURR','I-TM_OTHS','I-PD_PD',
                    'I-TI_TIME','I-NUM_PRICE', 'I-NUM_PERC', 'I-NUM_OTHS', 'O']
-    elif lex_cnt == 11:
+    elif lex_cnt == 11: # 11인 부분은 아직 미완성이다. 그래서 기본 lex_cnt 값을 33으로 해놓았다
         lexs = ['<UNK>', 'B-PS', 'B-AF', 'B-OG', 'B-LC', 'B-CV', 'B-EV', 'B-GR', 'B-TM', 'B-PD', 'B-TI', 'B-NUM',
                 'I-PS', 'I-AF', 'I-OG', 'I-LC', 'I-CV', 'I-EV', 'I-GR', 'I-TM', 'I-PD', 'I-TI', 'I-NUM', 'O']
 
