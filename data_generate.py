@@ -15,43 +15,14 @@ import numpy as np
 # get_data() 함수에 data type(train or test)만 넣으면 자동적으로 데이터를 만들 수 있다
 
 def get_data(data_type):
-    
-    print('시간이 조금 오래 걸릴 수 있습니다.')
-    # 1
+
     str_words = []
-    pos = []
-    lex = []
 
     json_paths = pathlib.Path('./json/json_' + data_type).glob('*')
     for json_path in json_paths:
         str_words += data_generator(json_path)[0]
-        pos += data_generator(json_path)[1]
-        lex += data_generator(json_path)[2]
-    update_tag_scheme(lex)
 
-    # 2
-    word_dico, word_to_id, id_to_word = word_mapping(str_words)
-    char_dico, char_to_id, id_to_char = char_mapping(str_words)
-    pos_dico, pos_to_id, id_to_pos = pos_mapping(pos)
-    lex_dico, lex_to_id, id_to_lex = lex_mapping(33)
-
-    # 3
-    encoded_words, encoded_char, encoded_pos, encoded_lex = encoding(str_words, pos, lex, word_to_id, char_to_id, pos_to_id, lex_to_id)
-
-    # 4.
-    padded_words, padded_char, padded_pos, padded_lex = padding(encoded_words, encoded_char, encoded_pos, encoded_lex, lex_to_id)
-
-    # 
-    labels = encoded_lex
-    lengths = len(labels)
-    
-    
-    print('data generate success!')
-    return str_words, padded_words, padded_char, padded_pos, padded_lex, labels, lengths
-
-
-
-
+    return str_words
 
 
 
@@ -96,7 +67,6 @@ def iob2(tags):
         else:  # conversion IOB1 to IOB2
             tags[i] = 'B' + tag[1:]
     return tags
-
 
 
 def data_generator(path):
