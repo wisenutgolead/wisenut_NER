@@ -64,15 +64,14 @@ def main(args):
 
     # NER_idx_dic = {'<unk>': 0, 'LC': 1, 'DT': 2, 'OG': 3, 'TI': 4, 'PS': 5}
     # 수정함
-    NER_idx_dic = {0: '<PAD>',
-                    1: 'B-PS_PROF', 2: 'B-PS_ENT', 3: 'B-PS_POL', 4: 'B-PS_NAME',
-                    5: 'B-AF_REC', 6: 'B-AF_WARES', 7: 'B-AF_ITEM', 8: 'B-AF_SERVICE', 9: 'B-AF_OTHS',
-                    10: 'B-OG_PRF', 11: 'B-OG_PRNF', 12: 'B-OG_PBF', 13: 'B-OG_PBNF',
-                    14: 'B-LC_CNT', 15: 'B-LC_PLA', 16: 'B-LC_ADD', 17: 'B-LC_OTHS',
-                    18: 'B-CV_TECH', 19: 'B-CV_LAWS', 20: 'B-EV_LT', 21: 'B-EV_ST',
-                    22: 'B-GR_PLOR', 23: 'B-GR_PLCI', 24: 'B-TM_FLUC', 25: 'B-TM_ECOFIN', 26: 'B-TM_FUNC',
-                    27: 'B-TM_CURR', 28: 'B-TM_OTHS', 29: 'B-PD_PD', 30: 'B-TI_TIME',
-                    31: 'B-NUM_PRICE', 32: 'B-NUM_PERC', 33: 'B-NUM_OTHS','I-PS_PROF': 34,
+    NER_idx_dic = {'<PAD>': 0, 'B-PS_PROF': 1, 'B-PS_ENT': 2, 'B-PS_POL': 3, 'B-PS_NAME': 4,
+                   'B-AF_REC': 5, 'B-AF_WARES': 6, 'B-AF_ITEM': 7, 'B-AF_SERVICE': 8, 'B-AF_OTHS': 9,
+                   'B-OG_PRF': 10, 'B-OG_PRNF': 11, 'B-OG_PBF': 12, 'B-OG_PBNF': 13,
+                   'B-LC_CNT': 14, 'B-LC_PLA': 15, 'B-LC_ADD': 16, 'B-LC_OTHS': 17,
+                   'B-CV_TECH': 18, 'B-CV_LAWS': 19, 'B-EV_LT': 20, 'B-EV_ST': 21,
+                   'B-GR_PLOR': 22, 'B-GR_PLCI': 23, 'B-TM_FLUC': 24, 'B-TM_ECOFIN': 25, 'B-TM_FUNC': 26,
+                   'B-TM_CURR': 27, 'B-TM_OTHS': 28, 'B-PD_PD': 29, 'B-TI_TIME': 30,
+                   'B-NUM_PRICE': 31, 'B-NUM_PERC': 32, 'B-NUM_OTHS': 33, 'I-PS_PROF': 34,
                    'I-PS_ENT': 35, 'I-PS_POL': 36, 'I-PS_NAME': 37, 'I-AF_REC': 38,
                    'I-AF_WARES': 39, 'I-AF_ITEM': 40, 'I-AF_SERVICE': 41, 'I-AF_OTHS': 42, 'I-OG_PRF': 43,
                    'I-OG_PRNF': 44, 'I-OG_PBF': 45, 'I-OG_PBNF': 46,
@@ -80,7 +79,7 @@ def main(args):
                    'I-EV_LT': 53, 'I-EV_ST': 54,
                    'I-GR_PLOR': 55, 'I-GR_PLCI': 56, 'I-TM_FLUC': 57, 'I-TM_ECOFIN': 58, 'I-TM_FUNC': 59,
                    'I-TM_CURR': 60, 'I-TM_OTHS': 61, 'I-PD_PD': 62,
-                   'I-TI_TIME': 63, 'I-NUM_PRICE': 64, 'I-NUM_PERC': 65, 'I-NUM_OTHS': 66, 'O': 67, '<unk>':68}
+                   'I-TI_TIME': 63, 'I-NUM_PRICE': 64, 'I-NUM_PERC': 65, 'I-NUM_OTHS': 66, 'O': 67, '<unk>': 68}
 
     # build models
     cnn_bilstm_tagger = CNNBiLSTM(vocab_size=len(vocab),

@@ -201,18 +201,17 @@ def load_data_interactive(input_str):
         len_pos_word = 0
         len_split_word = 0
         for mor_pos in pos_data:
-            if mor_pos[0] in split_raw_data[i]:
-                len_pos_word += len(mor_pos[0])
-                len_split_word = len(split_raw_data[i])
+            if mor_pos[0] in split_raw_data[i]:  # 어절 안에 형태소 단위의 단어가 있는 경우
+                len_pos_word += len(mor_pos[0])  # 형태소 단위 단어의 길이의 합
+                len_split_word = len(split_raw_data[i])  # 어절 단위 단어의 길이
 
                 # new_pos_data.append([i, pos_word[0], pos_word[1]])
 
-                x_split.append(i)
-                x_mor.append(mor_pos[0])
-                x_pos.append(mor_pos[1])
+                x_split.append(i)  # 어절 순서 저장
+                x_mor.append(mor_pos[0])  # 형태소 단위 단어 저장
+                x_pos.append(mor_pos[1])  # 형태소 저장
 
-
-
+                # 하나의 어절이 끝나는 경우 초기화 후 다음 어절로 넘김
                 if len_pos_word == len_split_word:
                     i = i + 1
                     len_pos_word = 0
