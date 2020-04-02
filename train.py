@@ -26,6 +26,7 @@ from sklearn.metrics import f1_score
 from pprint import pprint
 from data_utils import build_vocab
 from json_loader import loader
+import CNNBiLSTMCRF
 
 def main(args):
     gpu_index = None
@@ -82,7 +83,7 @@ def main(args):
                    'I-TI_TIME': 63, 'I-NUM_PRICE': 64, 'I-NUM_PERC': 65, 'I-NUM_OTHS': 66, 'O': 67, '<unk>': 68}
 
     # build models
-    cnn_bilstm_tagger = CNNBiLSTM(vocab_size=len(vocab),
+    cnn_bilstm_tagger = CNNBiLSTMCRF(vocab_size=len(vocab),
                                          char_vocab_size=len(char_vocab),
                                             pos_vocab_size=len(pos_vocab),
                                             lex_ner_size=len(NER_idx_dic),
@@ -90,7 +91,7 @@ def main(args):
                                             hidden_size=args.hidden_size,
                                             num_layers=args.num_layers,
                                             word2vec=word2vec_matrix,
-                                            num_classes=68) # 수정함
+                                            num_classes=69) # 수정함
 
     # If you don't use GPU, you can get error here (in the case of loading state dict from Tensor on GPU)
     #  To avoid error, you should use options -> map_location=lambda storage, loc: storage. it will load tensor to CPU
@@ -130,7 +131,7 @@ def main(args):
     momentum = args.momentum
 
     cnn_bilstm_tagger_parameters = filter(lambda p: p.requires_grad, cnn_bilstm_tagger.parameters())
-    optimizer = torch.optim.SGD(cnn_bilstm_tagger_parameters, lr=learning_rate, momentum=momentum)
+    optimizer = torch.optim.adam(cnn_bilstm_tagger_parameters, lr=learning_rate, amsgrad=True)
     criterion = nn.CrossEntropyLoss(ignore_index=0)#nn.NLLLoss() #nn.CrossEntropyLoss()#
 
     max_macro_f1_score = 0
@@ -295,7 +296,7 @@ if __name__ == '__main__':
     parser.add_argument('--num_layers', type=int, default=2)
     parser.add_argument('--num_workers', type=int, default=4)
     parser.add_argument('--num_epochs', type=int, default=50)
-    parser.add_argument('--batch_size', type=int, default=3) #64
+    parser.add_argument('--batch_size', type=int, default=64) #64
     parser.add_argument('--test_batch_size', type=int, default=30)  # 64
     parser.add_argument('--embed_size', type=int, default=100) #200
     parser.add_argument('--hidden_size', type=int, default=100)
