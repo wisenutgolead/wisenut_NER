@@ -61,7 +61,7 @@ class CNNBiLSTMCRF(nn.Module):
         # 패딩된 문장을 패킹(패딩은 연산 안들어가도록)
         packed = pack_padded_sequence(enhanced_embedding, lengths, batch_first=True)
         # packed -> (batch_size * real_length), embedding_dim!! -> it can calculate loss bw/ packed
-        output_word, state_word = self.lstm(packed)
+        output_word, state_word = self.lstm(packed) # output_word : (num_layers*num_directions, batch, hidden_size)
         logit = self.fc1(output_word[0])  # for packed
         crf = CRF(self.num_classes)
 

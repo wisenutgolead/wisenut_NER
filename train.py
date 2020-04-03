@@ -26,7 +26,7 @@ from sklearn.metrics import f1_score
 from pprint import pprint
 from data_utils import build_vocab
 from json_loader import loader
-import CNNBiLSTMCRF
+from CNNBiLSTMCRF import CNNBiLSTMCRF
 
 def main(args):
     gpu_index = None
@@ -131,7 +131,7 @@ def main(args):
     momentum = args.momentum
 
     cnn_bilstm_tagger_parameters = filter(lambda p: p.requires_grad, cnn_bilstm_tagger.parameters())
-    optimizer = torch.optim.adam(cnn_bilstm_tagger_parameters, lr=learning_rate, amsgrad=True)
+    optimizer = torch.optim.Adam(cnn_bilstm_tagger_parameters, lr=learning_rate, amsgrad=True)
     criterion = nn.CrossEntropyLoss(ignore_index=0)#nn.NLLLoss() #nn.CrossEntropyLoss()#
 
     max_macro_f1_score = 0
