@@ -1,28 +1,50 @@
-# CNN-BiLSTM model for Korean NER
-CNN과 BiLSTM을 이용한 한국어 개체명 인식기입니다.
+# CNN-BiLSTM + CRF model for Korean NER
+CNN-BiLSTM+CRF를 이용한 한국어 개체명 인식기 프로젝트
 
-#### 사용한 자질은 다음과 같습니다.
-- 형태소 non-static word2vec, static word2vec (mecab 사용, gensim으로 word2vec)
-- 음절단위 (character cnn)
-- POS (mecab 사용)
-- 사전정보 (gazette)
 
-#### Requirements
-- ```pytorch```
-- ```konlpy, mecab```
-- ```gensim```
+## 환경 구성
 
-#### 데이터셋
--  엑소브레인 언어분석 말뭉치(ETRI)
+OS: Windows 10  
+IDE: Pycharm  
+venv: Anaconda  
+Language: Python 3.6  
 
-#### 성능
-![classification_report](NER_practice_Yoo/assets/NER결과Classificaiton_report.png)
+### Pycharm + Anaconda
+[PyCharm for Anaconda Community Edition](https://www.jetbrains.com/pycharm/download/download-thanks.html?code=PCC&platform=windowsAnaconda)
 
-#### 결과 예제
-![NER_result](NER_practice_Yoo/assets/NER결과.png)
+**miniconda 설치**
 
-#### 모델
-![NER_model](NER_practice_Yoo/assets/NER모델그림.png)  
+**Pycharm + Anaconda 연동**  
+Pycharm - Files- Settings - Project interpreter에서 Anaconda 가상환경 생성 및 추가
 
-#### Future work
-- CRF + Viterbi
+![first step](img/Pycharm_1.png)
+![second step](img/Pycharm_2.png)
+![third step](img/Pycharm_3.png)
+
+### Requirements
+
+Anaconda Prompt 사용  
+
+Pytorch : 딥러닝 라이브러리  
+ ```
+ conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
+ ```
+
+gensim : 임베딩 라이브러리  
+```
+pip install gensim
+```
+
+eunjeon : 형태소 분석기 Windows용 Mecab  
+1. `pip install JPype1`  
+2. `pip install eunjeon`
+
+Sklearn : 머신러닝 라이브러리  
+`pip install scikit-learn`
+
+joblib : 학습 모델 저장 라이브러리  
+`pip install joblib`
+
+## Model Design
+![NER_model](img/scheme.png)
+
