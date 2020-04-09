@@ -16,6 +16,16 @@ from data_generate import get_data
 import pathlib
 mecab = Mecab()
 
+def sentence_split():
+    with open('./data_in/train_all.txt', 'r', encoding='utf-8') as f:
+
+        train_all = f.readline()
+        train_all_split = re.split('\.\s', train_all)
+
+    with open('./data_in/train_all_split.txt', 'w', encoding='utf-8') as f:
+        for i, sentence in enumerate(train_all_split):
+            f.write(sentence.strip()+'.\n')
+
 class Vocabulary():
     def __init__(self):
         self.word2idx = {}
