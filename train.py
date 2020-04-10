@@ -65,7 +65,7 @@ def main(args):
 
     # NER_idx_dic = {'<unk>': 0, 'LC': 1, 'DT': 2, 'OG': 3, 'TI': 4, 'PS': 5}
     # 수정함
-    NER_idx_dic = {'<PAD>': 0, 'B-PS_PROF': 1, 'B-PS_ENT': 2, 'B-PS_POL': 3, 'B-PS_NAME': 4,
+    NER_idx_dic = {'<unk>': 0, 'B-PS_PROF': 1, 'B-PS_ENT': 2, 'B-PS_POL': 3, 'B-PS_NAME': 4,
                    'B-AF_REC': 5, 'B-AF_WARES': 6, 'B-AF_ITEM': 7, 'B-AF_SERVICE': 8, 'B-AF_OTHS': 9,
                    'B-OG_PRF': 10, 'B-OG_PRNF': 11, 'B-OG_PBF': 12, 'B-OG_PBNF': 13,
                    'B-LC_CNT': 14, 'B-LC_PLA': 15, 'B-LC_ADD': 16, 'B-LC_OTHS': 17,
@@ -80,7 +80,7 @@ def main(args):
                    'I-EV_LT': 53, 'I-EV_ST': 54,
                    'I-GR_PLOR': 55, 'I-GR_PLCI': 56, 'I-TM_FLUC': 57, 'I-TM_ECOFIN': 58, 'I-TM_FUNC': 59,
                    'I-TM_CURR': 60, 'I-TM_OTHS': 61, 'I-PD_PD': 62,
-                   'I-TI_TIME': 63, 'I-NUM_PRICE': 64, 'I-NUM_PERC': 65, 'I-NUM_OTHS': 66, 'O': 67, '<unk>': 68}
+                   'I-TI_TIME': 63, 'I-NUM_PRICE': 64, 'I-NUM_PERC': 65, 'I-NUM_OTHS': 66, 'O': 67}
 
     # build models
     cnn_bilstm_tagger = CNNBiLSTMCRF(vocab_size=len(vocab),
@@ -91,7 +91,7 @@ def main(args):
                                             hidden_size=args.hidden_size,
                                             num_layers=args.num_layers,
                                             word2vec=word2vec_matrix,
-                                            num_classes=69) # 수정함
+                                            num_classes=70) # 수정함
 
     # If you don't use GPU, you can get error here (in the case of loading state dict from Tensor on GPU)
     #  To avoid error, you should use options -> map_location=lambda storage, loc: storage. it will load tensor to CPU

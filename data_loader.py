@@ -7,7 +7,7 @@ from data_utils import Vocabulary
 from data_utils import load_data_and_labels_klp, load_data_and_labels_exo
 from eunjeon import Mecab
 
-NER_idx_dic = {'<PAD>': 0, 'B-PS_PROF': 1, 'B-PS_ENT': 2, 'B-PS_POL': 3, 'B-PS_NAME': 4,
+NER_idx_dic = {'<unk>': 0, 'B-PS_PROF': 1, 'B-PS_ENT': 2, 'B-PS_POL': 3, 'B-PS_NAME': 4,
                 'B-AF_REC': 5, 'B-AF_WARES': 6, 'B-AF_ITEM': 7, 'B-AF_SERVICE': 8, 'B-AF_OTHS': 9,
                 'B-OG_PRF': 10, 'B-OG_PRNF': 11, 'B-OG_PBF': 12, 'B-OG_PBNF': 13,
                 'B-LC_CNT': 14, 'B-LC_PLA': 15, 'B-LC_ADD': 16, 'B-LC_OTHS': 17,
@@ -22,7 +22,7 @@ NER_idx_dic = {'<PAD>': 0, 'B-PS_PROF': 1, 'B-PS_ENT': 2, 'B-PS_POL': 3, 'B-PS_N
                 'I-EV_LT': 53, 'I-EV_ST': 54,
                 'I-GR_PLOR': 55, 'I-GR_PLCI': 56, 'I-TM_FLUC': 57, 'I-TM_ECOFIN': 58, 'I-TM_FUNC': 59,
                 'I-TM_CURR': 60, 'I-TM_OTHS': 61, 'I-PD_PD': 62,
-                'I-TI_TIME': 63, 'I-NUM_PRICE': 64, 'I-NUM_PERC': 65, 'I-NUM_OTHS': 66, 'O': 67, '<unk>': 68}
+                'I-TI_TIME': 63, 'I-NUM_PRICE': 64, 'I-NUM_PERC': 65, 'I-NUM_OTHS': 66, 'O': 67}
 
 class DocumentDataset (data.Dataset):
     """"""

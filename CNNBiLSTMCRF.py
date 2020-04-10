@@ -51,8 +51,11 @@ class CNNBiLSTMCRF(nn.Module):
             h_pools1 = self.dropout(h_pools1)  # (N,len(Ks)*Co)
             out = h_pools1.unsqueeze(1)  # 단어단위 고려
             char_output.append(out)
-            # print("out:",out)
+            # print("char_output:", char_output)
+            print("out:", out.shape)
+
         char_output = torch.cat(char_output, 1)  # torch.cat((h_pools1, h_lexicon_pools1), 1)
+        print("char_out:", char_output.shape)
         x_pos_embedding = self.pos_embed(x_pos)
         enhanced_embedding = torch.cat((char_output, x_word_embedding, trainable_x_word_embedding, x_pos_embedding),
                                        2)  # 임베딩 차원(2)으로 붙이고
@@ -63,7 +66,7 @@ class CNNBiLSTMCRF(nn.Module):
         # packed -> (batch_size * real_length), embedding_dim!! -> it can calculate loss bw/ packed
         output_word, state_word = self.lstm(packed) # output_word : (num_layers*num_directions, batch, hidden_size)
         logit = self.fc1(output_word[0])  # for packed
-        crf = CRF(self.num_classes)
 
-        return crf
+        _, path = CRF.decode(logit)
 
+        return path
